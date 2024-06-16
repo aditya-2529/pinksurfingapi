@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-c0min_d#2plydd8#smb*-gxu*77&1yol60et9f2jder4n_z7wg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['pinksurfingapi.onrender.com']
+ALLOWED_HOSTS = ['pinksurfingapi.onrender.com','127.0.0.1']
 
 
 # Application definition
