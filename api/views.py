@@ -1,6 +1,6 @@
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from base.models import Login
+from base.models import Login, Register
 from .serializers import LoginSerializer, RegisterSerializer
 
 @api_view(['POST'])
@@ -19,8 +19,8 @@ def registerUser(req):
 
 @api_view(['GET'])
 def add(req):
-    user = Login.objects.all()
-    serial = LoginSerializer(user,many=True)
+    user = Register.objects.all()
+    serial = RegisterSerializer(user,many=True)
     return Response(serial.data)
 
 @api_view(['DELETE'])
