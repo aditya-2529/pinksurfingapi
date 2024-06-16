@@ -5,21 +5,19 @@ from .serializers import LoginSerializer
 
 @api_view(['POST'])
 def getLoginData(req):
-    user = Login.objects.all()
-    serial = LoginSerializer(user, many=True)
-    return Response(serial.data)
-
-@api_view(['POST'])
-def add(req):
     serial = LoginSerializer(data=req.data)
     if serial.is_valid():
         serial.save()
     return Response(serial.data)
 
-@api_view(['DELETE'])
-def dele(req):
-    user = Login.objects.get(id=req.data['id'])
-    serial = LoginSerializer(data=req.data)
-    if serial.is_valid():
-        user.delete()
+@api_view(['GET'])
+def add(req):
+    user = Login.objects.all()
+    serial = LoginSerializer(user,many=True)
     return Response(serial.data)
+
+@api_view(['DELETE'])
+def delete(req):
+    user = Login.objects.get(id=req.data['id'])
+    user.delete()
+    return Response("Ok")
