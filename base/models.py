@@ -13,3 +13,4 @@ class Register(models.Model):
     email = models.CharField(max_length=100)
     password = models.CharField(max_length=50)
     entered_otp = models.CharField(max_length=6)
+    status = models.CharField(default="success",max_length=10)
