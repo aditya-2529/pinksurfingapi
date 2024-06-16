@@ -5,6 +5,8 @@ from django.db import models
 class Login(models.Model):
     email = models.CharField(default="Email",max_length=100)
     password = models.CharField(default="Password",max_length=50)
+    status = models.CharField(default="success",max_length=10)
+    message = models.CharField(default="200 OK")
     isLoggedIn = models.BooleanField()
 
 class Register(models.Model):
