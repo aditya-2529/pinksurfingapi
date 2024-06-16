@@ -7,5 +7,9 @@ class Login(models.Model):
     password = models.CharField(default="Password",max_length=50)
     isLoggedIn = models.BooleanField()
 
-    
-
+class Register(models.Model):
+    firstName = models.CharField(max_length=100)
+    lastName = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    password = models.CharField(max_length=50)
+    entered_otp = models.CharField(max_length=6)
