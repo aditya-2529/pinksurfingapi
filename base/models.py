@@ -9,5 +9,6 @@ class User(models.Model):
     fname = models.CharField(default="200 OK",max_length=10)
     lname = models.CharField(default="200 OK",max_length=10)
     token = models.CharField(null=True,max_length=200)
+    profileImage = models.CharField(default="",max_length=50)
     status = models.CharField(default="Success",max_length=10)
 
