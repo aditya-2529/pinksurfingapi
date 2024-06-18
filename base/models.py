@@ -3,12 +3,10 @@ from django.db import models
 # Create your models here.
 
 class User(models.Model):
-    email = models.CharField(default="Email",max_length=100)
-    password = models.CharField(default="Password",max_length=50)
-    username = models.CharField(default="success",max_length=10)
-    fname = models.CharField(default="200 OK",max_length=10)
-    lname = models.CharField(default="200 OK",max_length=10)
-    token = models.CharField(null=True,max_length=200)
-    userInfo = models.CharField(default="",max_length=50)
-    status = models.CharField(default="success",max_length=10)
+    email = models.EmailField()
+    fname = models.CharField(max_length=255)
+    lname = models.CharField(max_length=255)
+    password = models.CharField(max_length=20)
+    profile_image = models.URLField(default="",max_length=150)
+    fcm_token = models.CharField(max_length=255, null=True)
 
