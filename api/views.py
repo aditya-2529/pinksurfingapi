@@ -1,11 +1,18 @@
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from base.models import User
-from .serializers import UserSerializer
+from .serializers import UserSerializer, LoginSerializer
 
 @api_view(['POST'])
 def getData(req):
     serial = UserSerializer(data=req.data)
+    if serial.is_valid():
+        serial.save()
+    return Response(serial.data)
+
+@api_view(['POST'])
+def getLogin(req):
+    serial = LoginSerializer(data=req.data)
     if serial.is_valid():
         serial.save()
     return Response(serial.data)
